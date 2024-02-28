@@ -14,7 +14,7 @@ session_start();
 </head>
 <body>
     <div class="password">
-        <h3>Password generata:</h3>
+        <h3>Password generata con <?= $_SESSION['passwordLength']?> caratteri:</h3>
         <h2><?= $_SESSION['generated_password'] ?></h2>
     </div>
 </body>

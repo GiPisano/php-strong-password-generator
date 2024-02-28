@@ -7,11 +7,12 @@ if (isset($_GET["password_length"])) {
     $passwordLength = $passwordLength > 40 ? 40 : ($passwordLength < 5 ? 5 : $passwordLength);
     $generated_password = generate_password($passwordLength, $alphabet, $uppercase, $symbols, $numbers);
 
-    header('Location: ./password.php ');
     session_start();
 
     $_SESSION['generated_password'] = $generated_password;
+    $_SESSION['passwordLength'] = $passwordLength;
 
+    header('Location: ./password.php ');
     exit;
 }
 
